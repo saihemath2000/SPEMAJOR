@@ -4,6 +4,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Createquizdetails() {
+  // const userName = localStorage.getItem("userName");
+  // console.log(userName);
+
   const [title, setTitle] = useState("");
   const [numQuestions, setNumQuestions] = useState("");
   const [categories, setCategories] = useState([]);
@@ -33,7 +36,7 @@ function Createquizdetails() {
       const quizData = {
         categoryName: selectedCategory,
         numQ: parseInt(numQuestions),
-        title: title
+        title: title,
       };
       console.log(quizData);
       const response = await axios.post(
@@ -42,7 +45,9 @@ function Createquizdetails() {
       );
       const quizId = response.data;
       // alert(quizId);
-      navigate(`/Quiz/${quizId}`, { state: { categoryName: selectedCategory } }); // Navigate to the quiz page with the quiz ID
+      navigate(`/Quiz/${quizId}`, {
+        state: { categoryName: selectedCategory },
+      }); // Navigate to the quiz page with the quiz ID
     } catch (error) {
       console.error("Error creating quiz:", error.response.data);
     }

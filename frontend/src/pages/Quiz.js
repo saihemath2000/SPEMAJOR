@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
+import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Card, Form, Button, Modal } from "react-bootstrap";
 import "../css/Quizcomp.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Quiz() {
   const location = useLocation();
@@ -14,13 +14,30 @@ function Quiz() {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showResultModal, setShowResultModal] = useState(false);
   const [modalContent, setModalContent] = useState("");
-  // const [result, setResult] = useState(null);
+  const [timeRemaining, setTimeRemaining] = useState(10 * 60);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setQuizId(location.pathname.split("/")[2]);
     setCategory(location.state.category);
   }, [location.pathname, location.state.category]);
 
+  const handleSubmitAll = useCallback(async () => {
+    try {
+      const responses = questions.map((question) => ({
+        id: question.id,
+        response: selectedOptions[question.id],
+      }));
+      const response = await axios.post(
+        `http://localhost:8765/quiz-service/quiz/submit/${quizId}`,
+        responses
+      );
+      setModalContent(`Your result: ${response.data}`);
+      setShowResultModal(true);
+    } catch (error) {
+      console.error("Error submitting quiz:", error);
+    }
+  }, [questions, selectedOptions, quizId]);
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -35,42 +52,39 @@ function Quiz() {
     fetchQuestions();
   }, [quizId]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeRemaining((prevTime) => prevTime - 1);
+    }, 1000);
+
+    // Clear timer when time runs out
+    if (timeRemaining === 0) {
+      clearInterval(timer);
+      handleSubmitAll();
+    }
+
+    return () => clearInterval(timer); // Cleanup on unmount
+  }, [timeRemaining, handleSubmitAll]);
+
   const handleAnswerSubmit = (questionId, selectedOption) => {
-    // console.log("Question ID:", questionId);
-    // console.log("Selected Option:", selectedOption);
     setSelectedOptions((prevOptions) => ({
       ...prevOptions,
       [questionId]: selectedOption,
     }));
   };
-  const handleSubmitAll = async () => {
-    try {
-      const responses = questions.map((question) => ({
-        id : question.id,
-        response: selectedOptions[question.id], // Assuming you have stored selectedOption for each question in state
-      }));
-      console.log(responses);
-      const response = await axios.post(
-        `http://localhost:8765/quiz-service/quiz/submit/${quizId}`, // Assuming quizId is available
-        responses
-      );
-      setModalContent(`Your result: ${response.data}`);
-      setShowResultModal(true);
-      // setResult(response.data);
-    } catch (error) {
-      console.error("Error submitting quiz:", error);
-    }
-  };
 
-  // useEffect(() => {
-  //   if (result !== null) {
-  //     alert(`Your result: ${result}`);
-  //   }
-  // }, [result]);
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   return (
     <Container className="quiz-container">
       <h1 className="text-center mb-4">{category}</h1>
+      <div className="text-center mb-3">
+        Time Remaining: {formatTime(timeRemaining)}
+      </div>
       {questions.map((question) => (
         <Card key={question.id} className="mb-4">
           <Card.Body>
@@ -100,18 +114,21 @@ function Quiz() {
           Submit All
         </Button>
       </div>
-      <Modal show={showResultModal} onHide={() => setShowResultModal(false)}>
+      <Modal
+        show={showResultModal}
+        onHide={() => setShowResultModal(false)}
+        centered>
         <Modal.Header closeButton>
           <Modal.Title>Quiz Result</Modal.Title>
         </Modal.Header>
         <Modal.Body>{modalContent}</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowResultModal(false)}>
-            Close
-          </Button>
           <Button
             variant="primary"
-            onClick={() => (window.location.href = "/")}>
+            onClick={() => {
+              setShowResultModal(false);
+              navigate("/");
+            }}>
             Back to Home
           </Button>
         </Modal.Footer>

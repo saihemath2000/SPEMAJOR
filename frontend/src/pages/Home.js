@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Modal, Button } from "react-bootstrap";
 
 function Home() {
   const backgroundImageUrl = "https://picsum.photos/1200/800";
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [userName, setUserName] = useState("");
 
   const handleAttemptQuiz = () => {
-    // Navigate to the quiz page when the button is clicked
+    // Show the modal to ask for user's name
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    // Hide the modal
+    setShowModal(false);
+  };
+
+  const handleUserNameSubmit = () => {
+    // Store the user's name in localStorage
+    localStorage.setItem("userName", userName);
+    // Navigate to the quiz page
     navigate("/Createquizdetails");
   };
 
@@ -37,6 +52,32 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* Modal for inputting user's name */}
+      <Modal
+        show={showModal}
+        onHide={handleModalClose}
+        centered // Center the modal vertically and horizontally
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Please enter your name:</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input
+            type="text"
+            className="form-control"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleModalClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleUserNameSubmit}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
