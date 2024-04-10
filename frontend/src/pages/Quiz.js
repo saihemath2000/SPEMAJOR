@@ -5,6 +5,7 @@ import axios from "axios";
 import { Container, Card, Form, Button, Modal } from "react-bootstrap";
 import "../css/Quizcomp.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import jsPDF from "jspdf";
 
 function Quiz() {
   const location = useLocation();
@@ -32,12 +33,80 @@ function Quiz() {
         `http://localhost:8765/quiz-service/quiz/submit/${quizId}`,
         responses
       );
+
+      // Generate PDF Report
+      const doc = new jsPDF();
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+
+      // Calculate width of the document
+      const docWidth = doc.internal.pageSize.getWidth();
+
+      // Quiz Result and Category
+      const quizResultText = `Quiz Result for ${localStorage.getItem(
+        "userName"
+      )}`;
+      const categoryText = `Category: ${category}`;
+      const timeTakenText = `Time taken: ${formatTime(
+        10 * 60 - timeRemaining
+      )}`;
+      const totalMarksText = `Total Marks: ${response.data}`;
+
+      // Calculate x-coordinate for Category and Total Marks
+      const categoryX = docWidth - doc.getStringUnitWidth(categoryText) * 12; // Adjusting space between texts
+      const totalMarksX =
+        docWidth - doc.getStringUnitWidth(totalMarksText) * 12; // Adjusting space between texts
+
+      doc.text(quizResultText, 10, 10);
+      doc.text(categoryText, categoryX, 10);
+      doc.text(timeTakenText, 10, 20);
+      doc.text(totalMarksText, totalMarksX, 20);
+
+      let currentY = 50;
+
+      // Answers
+      questions.forEach((question, index) => {
+        const correctAnswer = question.rightAnswer;
+        const userAnswer = selectedOptions[question.id];
+        const isCorrect = correctAnswer === userAnswer;
+
+        // Question
+        doc.text(`${index + 1}. ${question.ques}`, 10, currentY);
+        currentY += 10;
+
+        // // User's answer
+        // doc.text(`Your Answer: ${userAnswer}`, 15, currentY);
+        // currentY += 10;
+
+        // // Correct answer
+        // doc.text(`Correct Answer: ${correctAnswer}`, 15, currentY);
+        // currentY += 10;
+
+        // Options
+        ["option1", "option2", "option3", "option4"].forEach((option, i) => {
+          const isUserOption = userAnswer === question[option];
+          const isCorrectOption = correctAnswer === question[option];
+          const color = isUserOption
+            ? isCorrect
+              ? "green"
+              : "red"
+            : isCorrectOption
+            ? "green"
+            : "black";
+          doc.setTextColor(color);
+          doc.text(`${i}) ${question[option]}`, 20, currentY + i * 7);
+        });
+
+        currentY += 40;
+      });
+
+      doc.save("quiz_report.pdf");
       setModalContent(`Your result: ${response.data}`);
       setShowResultModal(true);
     } catch (error) {
       console.error("Error submitting quiz:", error);
     }
-  }, [questions, selectedOptions, quizId]);
+  }, [questions, selectedOptions, quizId, category, timeRemaining]);
   useEffect(() => {
     const fetchQuestions = async () => {
       try {

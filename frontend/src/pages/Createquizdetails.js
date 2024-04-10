@@ -46,7 +46,7 @@ function Createquizdetails() {
       const quizId = response.data;
       // alert(quizId);
       navigate(`/Quiz/${quizId}`, {
-        state: { categoryName: selectedCategory },
+        state: { category: selectedCategory },
       }); // Navigate to the quiz page with the quiz ID
     } catch (error) {
       console.error("Error creating quiz:", error.response.data);
