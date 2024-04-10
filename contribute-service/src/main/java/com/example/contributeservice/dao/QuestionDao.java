@@ -1,12 +1,14 @@
-package com.example.questionservice.dao;
+package com.example.contributeservice.dao;
 
 
-import com.example.questionservice.model.Question;
+
+import com.example.contributeservice.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public interface QuestionDao extends JpaRepository<Question, Integer> {
   List<Question>  findByCategory(String category);

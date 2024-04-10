@@ -25,8 +25,8 @@ public class QuizService {
 //    QuestionDao questionDao;
     @Autowired
      QuizInterface quizInterface;
-    public ResponseEntity<Integer> createQuiz(String category, int numQ, String title) {
-       List<Integer> questions = quizInterface.getQuestionsForQuiz(category,numQ,title).getBody();
+    public ResponseEntity<Integer> createQuiz(String category, int numQ, String difficulty_Level, String title) {
+       List<Integer> questions = quizInterface.getQuestionsForQuiz(category,numQ,difficulty_Level,title).getBody();
        Quiz quiz = new Quiz();
        quiz.setTitle(title);
        quiz.setSetQuestionIds(questions);

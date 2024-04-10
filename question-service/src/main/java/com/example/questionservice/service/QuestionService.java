@@ -40,13 +40,15 @@ public class QuestionService {
 
     }
 
-    public ResponseEntity<String> addQuestion(Question question) {
-        questionDao.save(question);
-        return new ResponseEntity<>("succes",HttpStatus.CREATED);
+    public ResponseEntity<String> addQuestion(List<Question> questions) {
+        for(Question question : questions){
+            questionDao.save(question);
+        }
+        return new ResponseEntity<>("success",HttpStatus.CREATED);
     }
 
-    public ResponseEntity<List<Integer>> getQuestionsForQuiz(String categoryName, Integer numQ) {
-        List<Integer> questions = questionDao.findRandomQuestionsByCategory(categoryName,numQ);
+    public ResponseEntity<List<Integer>> getQuestionsForQuiz(String categoryName, Integer numQ, String difficulty_Level) {
+        List<Integer> questions = questionDao.findRandomQuestionsByCategory(categoryName,numQ,difficulty_Level);
         return new ResponseEntity<>(questions,HttpStatus.OK);
     }
 
@@ -64,6 +66,7 @@ public class QuestionService {
             wrapper.setOption2(question.getOption2());
             wrapper.setOption3(question.getOption3());
             wrapper.setOption4(question.getOption4());
+            wrapper.setRightAnswer(question.getRightAnswer());
             wrappers.add(wrapper);
         }
         return new ResponseEntity<>(wrappers,HttpStatus.OK);

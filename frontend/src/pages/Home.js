@@ -24,6 +24,15 @@ function Home() {
     // Navigate to the quiz page
     navigate("/Createquizdetails");
   };
+  const handleContribute = () => {
+    // Navigate to the quiz page when the button is clicked
+    navigate("/tempContribute");
+  };
+
+  const handleAdminLogin = () => {
+    // Navigate to the login page for admin
+    navigate("/login");
+  };
 
   return (
     <div
@@ -41,6 +50,13 @@ function Home() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 text-center">
+            <div className="float-right mt-2">
+              <button
+                className="btn btn-outline-primary"
+                onClick={handleAdminLogin}>
+                Admin Login
+              </button>
+            </div>
             <h1>Welcome to QuizApp</h1>
             <p>Test your knowledge</p>
             <button
@@ -48,7 +64,9 @@ function Home() {
               onClick={handleAttemptQuiz}>
               Attempt Quiz
             </button>
-            <button className="btn btn-primary ml-2">Contribute</button>
+            <button className="btn btn-primary ml-2" onClick={handleContribute}>
+              Contribute
+            </button>
           </div>
         </div>
       </div>

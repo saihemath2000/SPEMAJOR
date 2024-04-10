@@ -11,7 +11,7 @@ function Createquizdetails() {
   const [numQuestions, setNumQuestions] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const backgroundImage = "https://picsum.photos/1200/800";
   const navigate = useNavigate();
 
@@ -36,6 +36,7 @@ function Createquizdetails() {
       const quizData = {
         categoryName: selectedCategory,
         numQ: parseInt(numQuestions),
+        difficulty_Level: selectedDifficulty,
         title: title,
       };
       console.log(quizData);
@@ -53,10 +54,6 @@ function Createquizdetails() {
     }
   };
 
-  // const handleQuizHome = () => {
-  //   // Navigate to the quiz page when the button is clicked
-  //   navigate("/Quiz");
-  // };
   return (
     <div
       style={{
@@ -106,6 +103,19 @@ function Createquizdetails() {
                       {category}
                     </option>
                   ))}
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="difficulty">Difficulty Level</label>
+                <select
+                  className="form-control"
+                  id="difficulty"
+                  value={selectedDifficulty}
+                  onChange={(e) => setSelectedDifficulty(e.target.value)}>
+                  <option value="">Select Difficulty Level</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
                 </select>
               </div>
               <button type="submit" className="btn btn-primary btn-block">

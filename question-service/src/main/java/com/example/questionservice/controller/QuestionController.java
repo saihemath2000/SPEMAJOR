@@ -39,13 +39,13 @@ public class QuestionController {
     }
 
     @PostMapping("add")
-    public ResponseEntity<String> addQuestion(@RequestBody Question question){
-        return questionService.addQuestion(question);
+    public ResponseEntity<String> addQuestion(@RequestBody List<Question> questions){
+        return questionService.addQuestion(questions);
     }
 
     @GetMapping("generate")
-    public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName, @RequestParam Integer numQ){
-        return questionService.getQuestionsForQuiz(categoryName, numQ);
+    public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName, @RequestParam Integer numQ, @RequestParam String difficulty_Level){
+        return questionService.getQuestionsForQuiz(categoryName, numQ, difficulty_Level);
     }
 
     @PostMapping("getQuestions")
