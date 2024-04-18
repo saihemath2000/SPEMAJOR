@@ -1,0 +1,24 @@
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+spring:
+  application:
+    name: contribute-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/Contribute?createDatabaseIfNotExist=true
+    username: root
+    password: Hemanth@2000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+logging:
+  level:
+    org.springframework.cloud.sleuth: DEBUG
+server:
+  port: 8082

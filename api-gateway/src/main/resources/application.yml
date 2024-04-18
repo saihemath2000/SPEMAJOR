@@ -1,0 +1,70 @@
+spring:
+  config:
+    import:
+      configserver:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+      globalcors:
+        corsConfigurations:
+          "[/**]":
+            allowedOriginPatterns:
+              - "*"
+            allowCredentials: true
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: question-service
+          uri:
+            lb://question-service
+          predicates:
+            - Path=/question/**
+#          filters:
+#            - name: CircuitBreaker
+#              args:
+#                name: question-service
+#                fallbackuri: forward:/questionServiceFallBack
+
+        - id: quiz-service
+          uri:
+            lb://quiz-service
+          predicates:
+            - Path=/quiz/**
+#          filters:
+#            - name: CircuitBreaker
+#              args:
+#                name: quiz-service
+#                fallbackuri: forward:/quizServiceFallBack
+        - id: contribute-service
+          uri:
+            lb://contribute-service
+          predicates:
+            - Path=/contribute/**
+#          filters:
+#            - name: CircuitBreaker
+#              args:
+#                name: contribute-service
+#                fallbackuri: forward:/contributeServiceFallBack
+
+#hystrix:
+#  command:
+#    fallbackcmd:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMillseconds:  4000
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
+
+
+server:
+  port: 8765
