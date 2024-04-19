@@ -13,7 +13,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8765/contribute-service/contribute/login",
+        "http://localhost:8765/contribute/login",
         {
           email: email,
           password: password,

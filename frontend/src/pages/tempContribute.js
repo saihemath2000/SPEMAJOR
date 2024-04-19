@@ -13,7 +13,7 @@ function ContributionForm({ onSubmit }) {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8765/question-service/question/categories"
+          "http://localhost:8765/question/categories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -68,11 +68,7 @@ function ContributionForm({ onSubmit }) {
     };
     try {
       // Sending data in JSON format
-      await axios.post(
-        "http://localhost:8765/contribute-service/contribute/add",
-        ndata,
-        config
-      );
+      await axios.post("http://localhost:8765/contribute/add", ndata, config);
       // If successful, call the onSubmit callback
       //onSubmit(ndata);
       swal("Success", "Questions Contributed Successfully", "success");
