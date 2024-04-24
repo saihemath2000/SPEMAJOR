@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contribute-service-app
+  labels:
+    app: contribute-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contribute-service-app
+  template:
+    metadata:
+      labels:
+        app: contribute-service-app
+    spec:
+      containers:
+        - name: contribute-service-app
+          image: saihemanth1997/contribute-service:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
+      env:
+        - name: MYSQL_HOST
+          value: localhost # Replace with your MySQL hostname
+        - name: MYSQL_PORT
+          value: "3306" # Replace with your MySQL port
+        - name: MYSQL_DATABASE
+          value: "Contribute" # Replace with your MySQL database name
+        - name: MYSQL_USER
+          value: root # Replace with your MySQL username
+        - name: MYSQL_PASSWORD
+          value: "Hemanth@2000"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contribute-service-app
+spec:
+  selector:
+    app: contribute-service-app
+  ports:
+    - port: 80
+      targetPort: 8082

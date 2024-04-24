@@ -22,3 +22,12 @@ logging:
     org.springframework.cloud.sleuth: DEBUG
 server:
   port: 8082
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: eureka-0
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local.8761/eureka
