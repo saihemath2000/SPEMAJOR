@@ -1,7 +1,11 @@
 # documentation.
 
 name: Microservices CI/CD Pipeline
-
+env:
+   MYSQL_DATABASE: Question
+   MYSQL_USER : root
+   MYSQL_PASSWORD: Hemanth@2000
+   MYSQL_HOST: mysql-master
 on:
   push:
     branches: ["master"]
@@ -10,7 +14,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    services:
+      mysql-master:
+        image: mysql:8.0
+        ports:
+          - 3306/tcp
+        env:
+          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+        options: >-
+          --nmae=mysql-master
+          --health-cmd ="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+            health-retries=3
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
