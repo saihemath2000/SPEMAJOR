@@ -3,8 +3,7 @@
 name: Microservices CI/CD Pipeline
 env:
    MYSQL_DATABASE: Question
-   MYSQL_USER : root
-   MYSQL_PASSWORD: Hemanth@2000
+   MYSQL_ROOT_PASSWORD: Hemanth@2000
    MYSQL_HOST: mysql-master
 on:
   push:
@@ -21,9 +20,7 @@ jobs:
           - 3306/tcp
         env:
           MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
-          MYSQL_USER: ${{ env.MYSQL_USER }}
-          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
-          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
