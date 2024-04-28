@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: eureka-ingress
+spec:
+  rules:
+    - host: localhost # Change this to your desired hostname
+      http:
+        paths:
+          - path: /service-registry
+            pathType: Prefix
+            backend:
+              service:
+                name: eureka-lb # Change this to match your service registry name
+                port:
+                  number: 8761 # Change this to match your service registry port

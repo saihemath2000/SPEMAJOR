@@ -16,20 +16,16 @@ spec:
     spec:
       containers:
         - name: quiz-service-app
-          image: saihemanth1997/quiz-service:0.0.1
+          image: saihemanth1997/quiz-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8090
           env:
-            - name: MYSQL_HOST
-              value: mysql-svc
-            - name: MYSQL_PORT
-              value: "3306"
-            - name: MYSQL_DATABASE
-              value: Quiz
-            - name: MYSQL_USER
+            - name: DB_URL
+              value: jdbc:mysql://mysql-svc:3306/Quiz?useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=TRUE
+            - name: DB_USERNAME
               value: root
-            - name: MYSQL_PASSWORD
+            - name: DB_PASSWORD
               value: Hemanth@2000
 
 ---
@@ -38,6 +34,7 @@ kind: Service
 metadata:
   name: quiz-service-app
 spec:
+  # type: NodePort
   selector:
     app: quiz-service-app
   ports:

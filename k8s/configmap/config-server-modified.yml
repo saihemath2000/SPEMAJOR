@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-server-app
+  labels:
+    app: config-server-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-server-app
+  template:
+    metadata:
+      labels:
+        app: config-server-app
+    spec:
+      containers:
+        - name: config-server-app
+          image: saihemanth1997/config-server:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9296
+          env:
+            - name: EUREKA_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: EUREKA_HOSTNAME
+            - name: EUREKA_REGISTER_WITH_EUREKA
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: EUREKA_REGISTER_WITH_EUREKA
+            - name: EUREKA_FETCH_REGISTRY
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: EUREKA_FETCH_REGISTRY
+            - name: EUREKA_DEFAULT_ZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: EUREKA_DEFAULT_ZONE
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config-server-app
+spec:
+  # type: NodePort
+  selector:
+    app: config-server-app
+  ports:
+    - port: 80
+      targetPort: 9296
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-server-config
+data:
+  EUREKA_HOSTNAME: eureka-0
+  EUREKA_REGISTER_WITH_EUREKA: "true"
+  EUREKA_FETCH_REGISTRY: "true"
+  EUREKA_DEFAULT_ZONE: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka

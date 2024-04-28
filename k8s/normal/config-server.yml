@@ -27,6 +27,7 @@ kind: Service
 metadata:
   name: config-server-app
 spec:
+  # type: NodePort
   selector:
     app: config-server-app
   ports:

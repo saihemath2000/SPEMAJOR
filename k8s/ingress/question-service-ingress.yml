@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: question-service-ingress
+spec:
+  rules:
+    - host: localhost # Change this to your desired hostname
+      http:
+        paths:
+          - path: /question
+            pathType: Prefix
+            backend:
+              service:
+                name: question-service-app # Change this to match your question service name
+                port:
+                  number: 8080 # Change this to match your question service port

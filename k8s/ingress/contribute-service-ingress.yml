@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: contribute-service-ingress
+spec:
+  rules:
+    - host: localhost # Change this to your desired hostname
+      http:
+        paths:
+          - path: /contribute
+            pathType: Prefix
+            backend:
+              service:
+                name: contribute-service-app # Change this to match your contribute service name
+                port:
+                  number: 8082 # Change this to match your contribute service port

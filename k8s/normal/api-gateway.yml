@@ -33,4 +33,5 @@ spec:
   ports:
     - port: 80
       targetPort: 8765
+      # nodePort: 32705
       protocol: TCP

@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-gateway-ingress
+spec:
+  rules:
+    - host: localhost # Change this to your desired hostname
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api-gateway-app # Change this to match your API gateway service name
+                port:
+                  number: 8765 # Change this to match your API gateway service port

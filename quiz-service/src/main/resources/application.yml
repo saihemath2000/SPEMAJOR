@@ -7,9 +7,9 @@ spring:
     name: quiz-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/Quiz?createDatabaseIfNotExist=true
-    username: root
-    password: Hemanth@2000
+    url: ${DB_URL:jdbc:mysql://localhost:3306/Quiz?createDatabaseIfNotExist=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Hemanth@2000}
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,12 +21,11 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: eureka-0
+    hostname: ${EUREKA_HOSTNAME:eureka-0}
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: ${EUREKA_REGISTER_WITH_EUREKA:false}
+    fetch-registry: ${EUREKA_FETCH_REGISTRY:false}
     service-url:
-#      defaultZone: http://eureka-0.eureka.default.svc.cluster.local.8761/eureka
-       defaultZone: http://localhost:8761/eureka/
-
-
+      #       defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+      #      defaultZone: http://localhost:8761
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761}

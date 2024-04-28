@@ -13,6 +13,10 @@ public class QuestionServiceApplication {
 
 
 	public static void main(String[] args) {
+		String temp= System.getenv("MYSQL_USERNAME");
+		if(temp!=null)
+			 System.out.print("not found");
+		else System.out.print(temp);
 		SpringApplication.run(QuestionServiceApplication.class, args);
 	}
 

@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway-app
+  labels:
+    app: api-gateway-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway-app
+  template:
+    metadata:
+      labels:
+        app: api-gateway-app
+    spec:
+      containers:
+        - name: api-gateway-app
+          image: saihemanth1997/api-gateway:0.0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8765
+          env:
+            - name: EUREKA_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: EUREKA_HOSTNAME
+            - name: EUREKA_REGISTER_WITH_EUREKA
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: EUREKA_REGISTER_WITH_EUREKA
+            - name: EUREKA_FETCH_REGISTRY
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: EUREKA_FETCH_REGISTRY
+            - name: EUREKA_DEFAULT_ZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: EUREKA_DEFAULT_ZONE
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway-app
+spec:
+  # type: NodePort
+  selector:
+    app: api-gateway-app
+  ports:
+    - port: 80
+      targetPort: 8765
+      protocol: TCP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-config
+data:
+  EUREKA_HOSTNAME: eureka-0
+  EUREKA_REGISTER_WITH_EUREKA: "true"
+  EUREKA_FETCH_REGISTRY: "true"
+  EUREKA_DEFAULT_ZONE: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
