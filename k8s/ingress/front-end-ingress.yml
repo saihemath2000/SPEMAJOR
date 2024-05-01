@@ -3,14 +3,15 @@ kind: Ingress
 metadata:
   name: frontend-ingress
 spec:
+  ingressClassName: nginx
   rules:
-    - host: localhost # Change this to your desired hostname
+    - host: demo.localdev.me
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: frontend-svc # Change this to match your frontend service name
+                name: frontend-svc
                 port:
-                  number: 3000 # Change this to match your frontend service port
+                  number: 3000

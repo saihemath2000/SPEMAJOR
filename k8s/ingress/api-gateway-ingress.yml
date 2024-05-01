@@ -3,14 +3,22 @@ kind: Ingress
 metadata:
   name: api-gateway-ingress
 spec:
+  ingressClassName: nginx
   rules:
-    - host: localhost # Change this to your desired hostname
+    - host: demo.localdev.me
       http:
         paths:
           - path: /api
             pathType: Prefix
             backend:
               service:
-                name: api-gateway-app # Change this to match your API gateway service name
+                name: api-gateway-app
                 port:
-                  number: 8765 # Change this to match your API gateway service port
+                  number: 8765
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-svc
+                port:
+                  number: 3000

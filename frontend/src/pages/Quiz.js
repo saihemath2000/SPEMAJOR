@@ -30,7 +30,7 @@ function Quiz() {
         response: selectedOptions[question.id],
       }));
       const response = await axios.post(
-        `http://localhost:8765/quiz/submit/${quizId}`,
+        `http://demo.backend.me/quiz/submit/${quizId}`,
         responses
       );
 
@@ -111,7 +111,7 @@ function Quiz() {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8765/quiz/get/${quizId}`
+          `http://demo.backend.me/quiz/get/${quizId}`
         );
         setQuestions(response.data);
       } catch (error) {

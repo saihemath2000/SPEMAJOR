@@ -13,7 +13,7 @@ function AdminDashboard() {
   const fetchQuestions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8765/contribute/allQuestions"
+        "http://demo.backend.me/contribute/allQuestions"
       );
       setQuestions(response.data);
     } catch (error) {
@@ -38,7 +38,7 @@ function AdminDashboard() {
       console.log(dataTransfer);
       // Send a POST request to approve the questions
       await axios.post(
-        "http://localhost:8765/contribute/approve",
+        "http://demo.backend.me/contribute/approve",
         dataTransfer,
         {
           headers: {
@@ -60,7 +60,7 @@ function AdminDashboard() {
         if (willDelete) {
           // Delete the question
           try {
-            await axios.get(`http://localhost:8765/contribute/delete/${id}`);
+            await axios.get(`http://demo.backend.me/contribute/delete/${id}`);
             // swal("Poof! Your question has been deleted!", {
             //     icon: "success",
             // });
@@ -113,7 +113,7 @@ function AdminDashboard() {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.get(`http://localhost:8765/contribute/delete/${id}`);
+          await axios.get(`http://demo.backend.me/contribute/delete/${id}`);
           swal("Poof! Your question has been deleted!", {
             icon: "success",
           });

@@ -6,6 +6,8 @@ import com.example.quizservice.model.QuizDto;
 import com.example.quizservice.model.Response;
 import com.example.quizservice.service.QuizService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +19,9 @@ import java.util.List;
 @RestController
 @RequestMapping("quiz")
 @CrossOrigin(origins = "*")
-@Slf4j
 public class QuizController {
+
+    private static final Logger log= LoggerFactory.getLogger(QuizController.class);
     @Autowired
     QuizService quizService;
     @PostMapping("create")

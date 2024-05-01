@@ -19,7 +19,7 @@ function Createquizdetails() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8765/question/categories"
+          "http://demo.backend.me/question/categories"
         );
         setCategories(response.data);
       } catch (error) {
@@ -41,7 +41,7 @@ function Createquizdetails() {
       };
       console.log(quizData);
       const response = await axios.post(
-        "http://localhost:8765/quiz/create",
+        "http://demo.backend.me/quiz/create",
         quizData
       );
       const quizId = response.data;

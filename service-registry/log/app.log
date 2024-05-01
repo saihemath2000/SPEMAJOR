@@ -1,0 +1,69 @@
+2024-04-30T10:38:31.341+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-04-30T10:39:11.636+0530 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.serviceregistry.ServiceRegistryApplicationTests]: ServiceRegistryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-30T10:39:11.709+0530 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.serviceregistry.ServiceRegistryApplication for test class com.example.serviceregistry.ServiceRegistryApplicationTests
+2024-04-30T10:39:12.046+0530 [main] INFO  c.e.s.ServiceRegistryApplicationTests - Starting ServiceRegistryApplicationTests using Java 17.0.10 with PID 59916 (started by hemanth in /home/hemanth/Desktop/iiitb/SPE/SPEMAJORPROJECT/service-registry)
+2024-04-30T10:39:12.046+0530 [main] DEBUG c.e.s.ServiceRegistryApplicationTests - Running with Spring Boot v3.1.10, Spring v6.0.18
+2024-04-30T10:39:12.047+0530 [main] INFO  c.e.s.ServiceRegistryApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-04-30T10:39:12.691+0530 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=49bc680e-d384-3f58-8462-e529e0a415c5
+2024-04-30T10:39:13.570+0530 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-04-30T10:39:13.734+0530 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-04-30T10:39:13.748+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-04-30T10:39:13.749+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2024-04-30T10:39:13.753+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1714453753753 with initial instances count: 0
+2024-04-30T10:39:13.787+0530 [main] INFO  c.n.e.DefaultEurekaServerContext - Initializing ...
+2024-04-30T10:39:13.788+0530 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/]
+2024-04-30T10:39:13.889+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-04-30T10:39:13.889+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-04-30T10:39:13.889+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-04-30T10:39:13.889+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-04-30T10:39:13.970+0530 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/
+2024-04-30T10:39:13.975+0530 [main] INFO  c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-04-30T10:39:13.976+0530 [main] INFO  c.n.e.DefaultEurekaServerContext - Initialized
+2024-04-30T10:39:14.052+0530 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-04-30T10:39:14.081+0530 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-REGISTRY with eureka with status UP
+2024-04-30T10:39:14.089+0530 [Thread-10] INFO  o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
+2024-04-30T10:39:14.089+0530 [Thread-10] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
+2024-04-30T10:39:14.089+0530 [Thread-10] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-04-30T10:39:14.090+0530 [Thread-10] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-04-30T10:39:14.090+0530 [Thread-10] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-04-30T10:39:14.095+0530 [Thread-10] INFO  o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
+2024-04-30T10:39:14.098+0530 [main] INFO  c.e.s.ServiceRegistryApplicationTests - Started ServiceRegistryApplicationTests in 2.288 seconds (process running for 3.048)
+2024-04-30T10:39:14.642+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-REGISTRY with eureka with status DOWN
+2024-04-30T10:39:14.643+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Shutting down Eureka Server..
+2024-04-30T10:39:14.647+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shutting down ...
+2024-04-30T10:39:14.652+0530 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR c.n.d.s.t.j.EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169)
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54)
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-04-30T10:39:14.655+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shut down
+2024-04-30T10:39:14.655+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-04-30T10:39:14.656+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shutting down ...
+2024-04-30T10:39:14.659+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shut down
+2024-04-30T10:39:14.663+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-04-30T10:39:14.663+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-04-30T10:39:31.341+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-04-30T10:40:31.341+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-04-30T10:41:31.285+0530 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-04-30T10:41:31.341+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-04-30T10:41:48.346+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-REGISTRY with eureka with status DOWN
+2024-04-30T10:41:48.354+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Shutting down Eureka Server..
+2024-04-30T10:41:48.361+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shutting down ...
+2024-04-30T10:41:48.362+0530 [SpringApplicationShutdownHook] INFO  c.netflix.servo.monitor.StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-04-30T10:41:48.363+0530 [SpringApplicationShutdownHook] INFO  c.netflix.servo.monitor.StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-04-30T10:41:48.363+0530 [SpringApplicationShutdownHook] INFO  c.netflix.servo.monitor.StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2024-04-30T10:41:48.363+0530 [SpringApplicationShutdownHook] INFO  c.netflix.servo.monitor.StatsMonitor - Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2024-04-30T10:41:48.368+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shut down
+2024-04-30T10:41:48.368+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Eureka Service is now shutdown...
+2024-04-30T10:41:48.368+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shutting down ...
+2024-04-30T10:41:48.371+0530 [SpringApplicationShutdownHook] INFO  c.n.e.DefaultEurekaServerContext - Shut down
+2024-04-30T10:41:48.379+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-04-30T10:41:48.380+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
