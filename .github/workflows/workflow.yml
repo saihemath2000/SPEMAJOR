@@ -1,10 +1,6 @@
 # documentation.
 
 name: Microservices CI/CD Pipeline
-env:
-   MYSQL_DATABASE: Question
-   MYSQL_ROOT_PASSWORD: Hemanth@2000
-   MYSQL_HOST: mysql-master
 on:
   push:
     branches: ["master"]
@@ -13,14 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      mysql-master:
-        image: mysql:8.0
-        ports:
-          - 3306/tcp
-        env:
-          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
-          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
@@ -68,3 +56,11 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          
+  Deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying Microservices to Local Kubernetes Cluster
+        run: |
+          kubectl apply -f k8s/
