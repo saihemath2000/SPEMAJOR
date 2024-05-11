@@ -19,4 +19,10 @@ public class Question {
     private String difficultyLevel;
     private String category;
 
+    public Question(int i, String s, String s1, String s2, String s3, String s4, String s5) {
+    }
+
+    public Question() {
+
+    }
 }

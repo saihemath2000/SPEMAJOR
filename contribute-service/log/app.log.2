@@ -1,12 +1,12 @@
-2024-05-11T13:27:26.491+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application QUIZ-SERVICE with eureka with status DOWN
-2024-05-11T13:27:26.492+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715414246492, current=DOWN, previous=UP]
-2024-05-11T13:27:26.493+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUIZ-SERVICE/sai-iiitb:quiz-service:8090: registering service...
-2024-05-11T13:27:26.499+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUIZ-SERVICE/sai-iiitb:quiz-service:8090 - registration status: 204
-2024-05-11T13:27:26.509+0530 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-11T13:27:26.511+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2024-05-11T13:27:26.518+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2024-05-11T13:27:27.521+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2024-05-11T13:27:28.804+0530 [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+2024-05-11T13:33:28.133+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application CONTRIBUTE-SERVICE with eureka with status DOWN
+2024-05-11T13:33:28.134+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715414608134, current=DOWN, previous=UP]
+2024-05-11T13:33:28.134+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONTRIBUTE-SERVICE/sai-iiitb:contribute-service: registering service...
+2024-05-11T13:33:28.145+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONTRIBUTE-SERVICE/sai-iiitb:contribute-service - registration status: 204
+2024-05-11T13:33:28.153+0530 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-11T13:33:28.157+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-11T13:33:28.166+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-11T13:33:28.167+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-05-11T13:33:29.401+0530 [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
 	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
 	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:298)
@@ -55,8 +55,7 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:28.805+0530 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
-2024-05-11T13:27:28.806+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+2024-05-11T13:33:29.401+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
 	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
 	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:298)
@@ -108,8 +107,9 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:28.806+0530 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
-2024-05-11T13:27:28.824+0530 [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+2024-05-11T13:33:29.402+0530 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-05-11T13:33:29.402+0530 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-05-11T13:33:29.420+0530 [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
 	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
 	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:298)
@@ -159,8 +159,8 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:28.825+0530 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
-2024-05-11T13:27:28.825+0530 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUIZ-SERVICE/sai-iiitb:quiz-service:8090 - was unable to send heartbeat!
+2024-05-11T13:33:29.421+0530 [DiscoveryClient-HeartbeatExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-05-11T13:33:29.422+0530 [DiscoveryClient-HeartbeatExecutor-0] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONTRIBUTE-SERVICE/sai-iiitb:contribute-service - was unable to send heartbeat!
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
@@ -174,7 +174,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
-2024-05-11T13:27:28.827+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+2024-05-11T13:33:29.429+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
 	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
 	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:298)
@@ -227,8 +227,8 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:28.827+0530 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
-2024-05-11T13:27:28.827+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUIZ-SERVICE/sai-iiitb:quiz-service:8090 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+2024-05-11T13:33:29.430+0530 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-05-11T13:33:29.430+0530 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONTRIBUTE-SERVICE/sai-iiitb:contribute-service - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
@@ -244,8 +244,8 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:30.524+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2024-05-11T13:27:30.528+0530 [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
+2024-05-11T13:33:31.169+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-05-11T13:33:31.177+0530 [SpringApplicationShutdownHook] INFO  c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=Connection pool shut down stacktrace=java.lang.IllegalStateException: Connection pool shut down
 	at org.apache.hc.core5.util.Asserts.check(Asserts.java:38)
 	at org.apache.hc.core5.pool.StrictConnPool.lease(StrictConnPool.java:176)
 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.lease(PoolingHttpClientConnectionManager.java:298)
@@ -313,8 +313,8 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
 
-2024-05-11T13:27:30.529+0530 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
-2024-05-11T13:27:30.529+0530 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUIZ-SERVICE/sai-iiitb:quiz-service:8090 - de-registration failedCannot execute request on any known server
+2024-05-11T13:33:31.177+0530 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: Connection pool shut down
+2024-05-11T13:33:31.177+0530 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONTRIBUTE-SERVICE/sai-iiitb:contribute-service - de-registration failedCannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
@@ -346,4 +346,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1623)
-2024-05-11T13:27:30.534+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-05-11T13:33:31.183+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

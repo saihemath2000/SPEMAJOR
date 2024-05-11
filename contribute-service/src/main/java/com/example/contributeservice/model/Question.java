@@ -19,4 +19,6 @@ public class Question {
     private String difficultyLevel;
     private String category;
 
+    public Question(int i, String s, String optionA, String optionB, String optionC, String optionD, String optionA1) {
+    }
 }

@@ -1,0 +1,114 @@
+2024-05-11T12:22:30.761+0530 [main] INFO  c.e.q.QuestionServiceApplication - start of execution
+2024-05-11T12:22:31.472+0530 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:9296
+2024-05-11T12:22:33.383+0530 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=question-service, profiles=[default], label=null, version=a388f76341eb1597da67e1f7ed1a7cf827631b49, state=null
+2024-05-11T12:22:33.384+0530 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/saihemath2000/config-server/application.yml'}]
+2024-05-11T12:22:33.388+0530 [main] INFO  c.e.q.QuestionServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-11T12:22:33.638+0530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-11T12:22:33.716+0530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2024-05-11T12:22:33.821+0530 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0be36586-f5bd-300f-94df-2ba1e6d8545a
+2024-05-11T12:22:34.004+0530 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-11T12:22:34.008+0530 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-11T12:22:34.009+0530 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-11T12:22:34.009+0530 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-11T12:22:34.058+0530 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-11T12:22:34.058+0530 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 664 ms
+2024-05-11T12:22:34.150+0530 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-11T12:22:34.174+0530 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.22.Final
+2024-05-11T12:22:34.175+0530 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-05-11T12:22:34.316+0530 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-11T12:22:34.329+0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-11T12:22:34.508+0530 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72b10258
+2024-05-11T12:22:34.509+0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-11T12:22:34.539+0530 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-11T12:22:34.967+0530 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-11T12:22:34.996+0530 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-11T12:22:35.139+0530 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-11T12:22:35.191+0530 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-11T12:22:35.532+0530 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-05-11T12:22:35.954+0530 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-11T12:22:35.985+0530 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-05-11T12:22:36.007+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-05-11T12:22:36.010+0530 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-05-11T12:22:36.022+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-05-11T12:22:36.137+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-05-11T12:22:36.138+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-05-11T12:22:36.139+0530 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-11T12:22:36.142+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1715410356141 with initial instances count: 0
+2024-05-11T12:22:36.143+0530 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application QUESTION-SERVICE with eureka with status UP
+2024-05-11T12:22:36.144+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715410356144, current=UP, previous=STARTING]
+2024-05-11T12:22:36.144+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service: registering service...
+2024-05-11T12:22:36.145+0530 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-11T12:22:36.156+0530 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-11T12:22:36.157+0530 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2024-05-11T12:22:36.173+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - registration status: 204
+2024-05-11T12:22:36.551+0530 [main] INFO  c.e.q.QuestionServiceApplication - Started QuestionServiceApplication in 5.734 seconds (process running for 6.172)
+2024-05-11T12:22:48.098+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application QUESTION-SERVICE with eureka with status DOWN
+2024-05-11T12:22:48.098+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715410368098, current=DOWN, previous=UP]
+2024-05-11T12:22:48.098+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service: registering service...
+2024-05-11T12:22:48.106+0530 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-11T12:22:48.107+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - registration status: 204
+2024-05-11T12:22:48.107+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-11T12:22:48.110+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-11T12:22:48.111+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-05-11T12:22:51.112+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-05-11T12:22:51.118+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - deregister  status: 200
+2024-05-11T12:22:51.121+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-05-11T12:23:02.191+0530 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.questionservice.QuestionServiceApplicationTests]: QuestionServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-11T12:23:02.293+0530 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.questionservice.QuestionServiceApplication for test class com.example.questionservice.QuestionServiceApplicationTests
+2024-05-11T12:23:03.421+0530 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:9296
+2024-05-11T12:23:04.518+0530 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=question-service, profiles=[default], label=null, version=a388f76341eb1597da67e1f7ed1a7cf827631b49, state=null
+2024-05-11T12:23:04.519+0530 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/saihemath2000/config-server/application.yml'}]
+2024-05-11T12:23:04.530+0530 [main] INFO  c.e.q.QuestionServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-05-11T12:23:04.806+0530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-11T12:23:04.880+0530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interface.
+2024-05-11T12:23:05.017+0530 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=b5532245-6341-3b05-acc9-d5a6186cabd2
+2024-05-11T12:23:05.161+0530 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-11T12:23:05.192+0530 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.22.Final
+2024-05-11T12:23:05.194+0530 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-05-11T12:23:05.281+0530 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-11T12:23:05.298+0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-11T12:23:05.530+0530 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a238a8e
+2024-05-11T12:23:05.532+0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-11T12:23:05.562+0530 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-11T12:23:05.941+0530 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-11T12:23:05.971+0530 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-11T12:23:06.130+0530 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-11T12:23:06.243+0530 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-11T12:23:06.872+0530 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-05-11T12:23:06.913+0530 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-11T12:23:06.926+0530 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-05-11T12:23:06.977+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-05-11T12:23:06.980+0530 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-05-11T12:23:06.992+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-05-11T12:23:06.993+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-05-11T12:23:07.137+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-05-11T12:23:07.139+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-05-11T12:23:07.141+0530 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-11T12:23:07.144+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1715410387143 with initial instances count: 0
+2024-05-11T12:23:07.146+0530 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application QUESTION-SERVICE with eureka with status UP
+2024-05-11T12:23:07.146+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715410387146, current=UP, previous=STARTING]
+2024-05-11T12:23:07.147+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service: registering service...
+2024-05-11T12:23:07.157+0530 [main] INFO  c.e.q.QuestionServiceApplicationTests - Started QuestionServiceApplicationTests in 4.746 seconds (process running for 6.393)
+2024-05-11T12:23:07.171+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - registration status: 204
+2024-05-11T12:23:07.187+0530 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application QUESTION-SERVICE with eureka with status DOWN
+2024-05-11T12:23:07.187+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1715410387187, current=DOWN, previous=UP]
+2024-05-11T12:23:07.187+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service: registering service...
+2024-05-11T12:23:07.190+0530 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-11T12:23:07.191+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-11T12:23:07.192+0530 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - registration status: 204
+2024-05-11T12:23:07.196+0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-11T12:23:07.196+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-05-11T12:23:10.198+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-05-11T12:23:10.206+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_QUESTION-SERVICE/sai-iiitb:question-service - deregister  status: 200
+2024-05-11T12:23:10.210+0530 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

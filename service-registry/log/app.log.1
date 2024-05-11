@@ -1,75 +1,61 @@
-2024-04-30T10:26:29.097+0530 [main] INFO  c.e.s.ServiceRegistryApplication - Starting ServiceRegistryApplication using Java 20.0.1 with PID 48393 (/home/hemanth/Desktop/iiitb/SPE/SPEMAJORPROJECT/service-registry/target/classes started by hemanth in /home/hemanth/Desktop/iiitb/SPE/SPEMAJORPROJECT/service-registry)
-2024-04-30T10:26:29.098+0530 [main] DEBUG c.e.s.ServiceRegistryApplication - Running with Spring Boot v3.1.10, Spring v6.0.18
-2024-04-30T10:26:29.098+0530 [main] INFO  c.e.s.ServiceRegistryApplication - No active profile set, falling back to 1 default profile: "default"
-2024-04-30T10:26:29.698+0530 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=d4f0de9a-ee4b-3bac-b986-d78eb6e27f0c
-2024-04-30T10:26:29.869+0530 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8761 (http)
-2024-04-30T10:26:29.874+0530 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
-2024-04-30T10:26:29.875+0530 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2024-04-30T10:26:29.875+0530 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
-2024-04-30T10:26:29.930+0530 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2024-04-30T10:26:29.931+0530 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 808 ms
-2024-04-30T10:26:30.446+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
-2024-04-30T10:26:30.446+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
-2024-04-30T10:26:30.562+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
-2024-04-30T10:26:30.562+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
-2024-04-30T10:26:31.104+0530 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-04-30T10:26:31.114+0530 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2024-04-30T10:26:31.131+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2024-04-30T10:26:31.132+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
-2024-04-30T10:26:31.138+0530 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1714452991138 with initial instances count: 0
-2024-04-30T10:26:31.162+0530 [main] INFO  c.n.e.DefaultEurekaServerContext - Initializing ...
-2024-04-30T10:26:31.163+0530 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/]
-2024-04-30T10:26:31.253+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
-2024-04-30T10:26:31.253+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
-2024-04-30T10:26:31.253+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
-2024-04-30T10:26:31.253+0530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
-2024-04-30T10:26:31.281+0530 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/
-2024-04-30T10:26:31.285+0530 [main] INFO  c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
-2024-04-30T10:26:31.285+0530 [main] INFO  c.n.e.DefaultEurekaServerContext - Initialized
-2024-04-30T10:26:31.291+0530 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-04-30T10:26:31.330+0530 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-REGISTRY with eureka with status UP
-2024-04-30T10:26:31.332+0530 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
-2024-04-30T10:26:31.338+0530 [Thread-9] INFO  o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
-2024-04-30T10:26:31.338+0530 [Thread-9] INFO  o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
-2024-04-30T10:26:31.338+0530 [Thread-9] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
-2024-04-30T10:26:31.338+0530 [Thread-9] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
-2024-04-30T10:26:31.338+0530 [Thread-9] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
-2024-04-30T10:26:31.340+0530 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8761 (http) with context path ''
-2024-04-30T10:26:31.341+0530 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8761
-2024-04-30T10:26:31.342+0530 [Thread-9] INFO  o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
-2024-04-30T10:26:31.387+0530 [main] INFO  c.e.s.ServiceRegistryApplication - Started ServiceRegistryApplication in 2.576 seconds (process running for 3.116)
-2024-04-30T10:26:31.901+0530 [RMI TCP Connection(2)-192.168.0.114] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-30T10:26:31.901+0530 [RMI TCP Connection(2)-192.168.0.114] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-04-30T10:26:31.902+0530 [RMI TCP Connection(2)-192.168.0.114] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2024-04-30T10:27:31.339+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:28:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:28:40.121+0530 [http-nio-8761-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUESTION-SERVICE/sai-iiitb:question-service with status UP (replication=false)
-2024-04-30T10:28:40.453+0530 [http-nio-8761-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUESTION-SERVICE/sai-iiitb:question-service with status DOWN (replication=false)
-2024-04-30T10:28:41.066+0530 [TaskBatchingWorker-target_localhost-13] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:28:41.066+0530 [TaskBatchingWorker-target_localhost-13] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
-2024-04-30T10:28:43.470+0530 [http-nio-8761-exec-6] INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance QUESTION-SERVICE/sai-iiitb:question-service (replication=false)
-2024-04-30T10:28:43.980+0530 [TaskBatchingWorker-target_localhost-13] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:28:43.980+0530 [TaskBatchingWorker-target_localhost-13] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
-2024-04-30T10:29:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:30:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:31:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:32:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:33:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:34:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:35:18.419+0530 [http-nio-8761-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status UP (replication=false)
-2024-04-30T10:35:18.786+0530 [http-nio-8761-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status DOWN (replication=false)
-2024-04-30T10:35:19.296+0530 [TaskBatchingWorker-target_localhost-15] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:35:19.296+0530 [TaskBatchingWorker-target_localhost-15] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2024-04-30T10:35:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:36:31.340+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:36:32.912+0530 [http-nio-8761-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status UP (replication=false)
-2024-04-30T10:36:33.286+0530 [http-nio-8761-exec-8] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status DOWN (replication=false)
-2024-04-30T10:36:33.797+0530 [TaskBatchingWorker-target_localhost-13] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:36:33.797+0530 [TaskBatchingWorker-target_localhost-13] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
-2024-04-30T10:37:31.341+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
-2024-04-30T10:37:49.432+0530 [http-nio-8761-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance API-GATEWAY/sai-iiitb:api-gateway:8765 with status UP (replication=false)
-2024-04-30T10:37:49.943+0530 [TaskBatchingWorker-target_localhost-15] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:37:49.944+0530 [TaskBatchingWorker-target_localhost-15] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2024-04-30T10:37:50.034+0530 [http-nio-8761-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance API-GATEWAY/sai-iiitb:api-gateway:8765 with status DOWN (replication=false)
-2024-04-30T10:37:50.544+0530 [TaskBatchingWorker-target_localhost-13] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2024-04-30T10:37:50.544+0530 [TaskBatchingWorker-target_localhost-13] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2024-05-11T13:20:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:21:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:22:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:23:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:23:28.799+0530 [http-nio-8761-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status UP (replication=false)
+2024-05-11T13:23:29.316+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:23:29.316+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:23:55.648+0530 [http-nio-8761-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status UP (replication=false)
+2024-05-11T13:23:55.686+0530 [http-nio-8761-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status DOWN (replication=false)
+2024-05-11T13:23:56.199+0530 [TaskBatchingWorker-target_localhost-4] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:23:56.199+0530 [TaskBatchingWorker-target_localhost-4] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
+2024-05-11T13:23:59.272+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:23:59.272+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:24:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:24:29.289+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:24:29.289+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:24:59.289+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:24:59.289+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:25:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:25:29.296+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:25:29.296+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:25:59.303+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:25:59.303+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:26:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:26:29.305+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:26:29.306+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:26:59.311+0530 [TaskBatchingWorker-target_localhost-7] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:26:59.311+0530 [TaskBatchingWorker-target_localhost-7] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2024-05-11T13:27:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:27:26.498+0530 [http-nio-8761-exec-6] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance QUIZ-SERVICE/sai-iiitb:quiz-service:8090 with status DOWN (replication=false)
+2024-05-11T13:27:27.013+0530 [TaskBatchingWorker-target_localhost-12] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:27:27.013+0530 [TaskBatchingWorker-target_localhost-12] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
+2024-05-11T13:27:56.339+0530 [http-nio-8761-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status UP (replication=false)
+2024-05-11T13:27:56.850+0530 [TaskBatchingWorker-target_localhost-8] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:27:56.851+0530 [TaskBatchingWorker-target_localhost-8] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2024-05-11T13:27:57.377+0530 [http-nio-8761-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status DOWN (replication=false)
+2024-05-11T13:27:57.886+0530 [TaskBatchingWorker-target_localhost-12] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:27:57.886+0530 [TaskBatchingWorker-target_localhost-12] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
+2024-05-11T13:28:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:29:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:30:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:30:59.391+0530 [http-nio-8761-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status UP (replication=false)
+2024-05-11T13:30:59.906+0530 [TaskBatchingWorker-target_localhost-17] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:30:59.906+0530 [TaskBatchingWorker-target_localhost-17] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
+2024-05-11T13:31:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:31:29.878+0530 [TaskBatchingWorker-target_localhost-8] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:31:29.878+0530 [TaskBatchingWorker-target_localhost-8] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2024-05-11T13:31:50.015+0530 [http-nio-8761-exec-8] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status UP (replication=false)
+2024-05-11T13:31:50.528+0530 [TaskBatchingWorker-target_localhost-6] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:31:50.528+0530 [TaskBatchingWorker-target_localhost-6] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-6 due to permanent error
+2024-05-11T13:31:51.162+0530 [http-nio-8761-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance CONTRIBUTE-SERVICE/sai-iiitb:contribute-service with status DOWN (replication=false)
+2024-05-11T13:31:51.676+0530 [TaskBatchingWorker-target_localhost-16] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:31:51.676+0530 [TaskBatchingWorker-target_localhost-16] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
+2024-05-11T13:31:59.883+0530 [TaskBatchingWorker-target_localhost-8] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:31:59.884+0530 [TaskBatchingWorker-target_localhost-8] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2024-05-11T13:32:07.105+0530 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-05-11T13:32:29.895+0530 [TaskBatchingWorker-target_localhost-8] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:32:29.895+0530 [TaskBatchingWorker-target_localhost-8] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2024-05-11T13:32:59.912+0530 [TaskBatchingWorker-target_localhost-1] ERROR c.n.e.c.ReplicationTaskProcessor - Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2024-05-11T13:32:59.912+0530 [TaskBatchingWorker-target_localhost-1] WARN  c.n.e.util.batcher.TaskExecutors - Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2024-05-11T13:33:07.038+0530 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 5

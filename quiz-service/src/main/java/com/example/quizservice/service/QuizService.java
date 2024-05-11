@@ -26,13 +26,33 @@ public class QuizService {
     @Autowired
      QuizInterface quizInterface;
     public ResponseEntity<Integer> createQuiz(String category, int numQ, String difficulty_Level, String title) {
-       List<Integer> questions = quizInterface.getQuestionsForQuiz(category,numQ,difficulty_Level,title).getBody();
-       Quiz quiz = new Quiz();
-       quiz.setTitle(title);
-       quiz.setSetQuestionIds(questions);
-       quizDao.save(quiz);
-       return new ResponseEntity<>(quiz.getId(), HttpStatus.OK);
+        // Retrieve questions for the quiz
+        ResponseEntity<List<Integer>> questionsResponse = quizInterface.getQuestionsForQuiz(category, numQ, difficulty_Level, title);
+
+        // Check if questions are retrieved successfully
+        if (questionsResponse.getStatusCode() != HttpStatus.OK || questionsResponse.getBody() == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+
+        List<Integer> questions = questionsResponse.getBody();
+
+        // Create a new quiz
+        Quiz quiz = new Quiz();
+        quiz.setTitle(title);
+        quiz.setSetQuestionIds(questions);
+
+        // Save the quiz to the database
+        quiz = quizDao.save(quiz);
+
+        // Check if quiz is saved successfully
+        if (quiz == null || quiz.getId() == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+
+        // Return the ID of the saved quiz
+        return ResponseEntity.ok(quiz.getId());
     }
+
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id) {
           Quiz quiz = quizDao.findById(id).get();

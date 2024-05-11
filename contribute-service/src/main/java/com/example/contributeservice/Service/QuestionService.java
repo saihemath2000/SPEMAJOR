@@ -32,13 +32,12 @@ public class QuestionService {
 
     public boolean validateCredentials(String email, String password) {
         Credentials credentials = credentialsDao.findByEmail(email);
-//        System.out.println(credentials.getEmail());
-//        System.out.println(credentials.getPassword());
-        if (credentials != null && credentials.getPassword().equals(password)) {
+        if (credentials != null && password != null && password.equals(credentials.getPassword())) {
             return true; // Email and password match
         }
         return false; // Email or password is incorrect
     }
+
 
     public ResponseEntity<List<Question>> getAllQuestions(){
         try {

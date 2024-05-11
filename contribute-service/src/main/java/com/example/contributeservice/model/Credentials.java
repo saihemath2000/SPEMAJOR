@@ -14,4 +14,7 @@ public class Credentials {
     private Integer id;
     private String email;
     private String password;
+
+    public Credentials(String email, String password) {
+    }
 }
