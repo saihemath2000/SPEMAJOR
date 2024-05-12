@@ -97,7 +97,7 @@ pipeline {
                 // Use withKubeConfig step to set KUBECONFIG environment variable
                 withKubeConfig([credentialsId: 'kubecli', serverUrl: 'https://192.168.49.2:8443', caCertificate: '']) {
                     // Run kubectl commands here
-                    sh 'kubectl apply -f k8s/'
+                    sh 'kubectl apply -f k8s/  --namespace=jenkins'
                 }
             }
         }
