@@ -69,7 +69,7 @@ pipeline {
                     sh 'docker build -t saihemanth1997/front-end ./frontend'
                     
                     // Dockerize other services
-                    sh 'docker build -t saihemanth1997/config-server ./config-server'
+                    sh 'docker build -t saihemanth1997/config-server ./cloud-config-server'
                     sh 'docker build -t saihemanth1997/service-registry ./service-registry'
                     sh 'docker build -t saihemanth1997/api-gateway ./api-gateway'
                 }
