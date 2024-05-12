@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         DOCKER_REGISTRY_CREDENTIALS = 'DockerHubCred'
+        // KUBECONFIG = '/var/lib/jenkins/.kube/config' 
     }
     
     stages {
@@ -91,22 +92,23 @@ pipeline {
           }
         }
         
-        stage('Deploy to Minikube') {
+        stage('Deploy to Kubernetes') {
             steps {
-                // Apply Kubernetes manifests from k8s folder
-                script {
+                // Use withKubeConfig step to set KUBECONFIG environment variable
+                withKubeConfig([credentialsId: 'kubecli', serverUrl: 'https://192.168.49.2:8443', caCertificate: '']) {
+                    // Run kubectl commands here
                     sh 'kubectl apply -f k8s/'
                 }
             }
         }
     }
     
-    post {
-        always {
-            // Cleanup
-            script {
-                sh 'kubectl delete -f k8s/'
-            }
-        }
-    }
+    // post {
+    //     always {
+    //         // Cleanup
+    //         script {
+    //             sh 'kubectl delete -f k8s/'
+    //         }
+    //     }
+    // }
 }
