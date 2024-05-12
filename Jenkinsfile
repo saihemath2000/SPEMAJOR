@@ -59,34 +59,36 @@ pipeline {
             }
         }
         
-        stage('Dockerize and Push Images') {
+        stage('Dockerize') {
             steps {
                 script {
                     // Dockerize and push backend services
                     sh 'docker build -t saihemanth1997/question-service ./question-service'
-                    sh 'docker push saihemanth1997/question-service'
-                    
                     sh 'docker build -t saihemanth1997/contribute-service ./contribute-service'
-                    sh 'docker push saihemanth1997/contribute-service'
-                    
                     sh 'docker build -t saihemanth1997/quiz-service ./quiz-service'
-                    sh 'docker push saihemanth1997/quiz-service'
-                    
-                    // Dockerize and push frontend
                     sh 'docker build -t saihemanth1997/front-end ./frontend'
-                    sh 'docker push saihemanth1997/front-end'
                     
-                    // Dockerize and push other services
+                    // Dockerize other services
                     sh 'docker build -t saihemanth1997/config-server ./config-server'
-                    sh 'docker push saihemanth1997/config-server'
-                    
                     sh 'docker build -t saihemanth1997/service-registry ./service-registry'
-                    sh 'docker push saihemanth1997/service-registry'
-                    
                     sh 'docker build -t saihemanth1997/api-gateway ./api-gateway'
-                    sh 'docker push saihemanth1997/api-gateway'
                 }
             }
+        }
+        stage('docker push images'){
+          steps{
+              script{
+                  docker.withRegistry('', 'DockerHubCred') {
+                      sh 'docker push saihemanth1997/question-service'
+                      sh 'docker push saihemanth1997/contribute-service'
+                      sh 'docker push saihemanth1997/quiz-service'
+                      sh 'docker push saihemanth1997/front-end'
+                      sh 'docker push saihemanth1997/config-server'
+                      sh 'docker push saihemanth1997/service-registry'
+                      sh 'docker push saihemanth1997/api-gateway' 
+                  }
+              }
+          }
         }
         
         stage('Deploy to Minikube') {
