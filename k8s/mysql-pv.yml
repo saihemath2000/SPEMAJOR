@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mysql-pv-volume
-  namespace: jenkins
+  # namespace: jenkins
   labels:
     type: local
 spec:
