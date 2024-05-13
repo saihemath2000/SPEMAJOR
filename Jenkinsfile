@@ -105,7 +105,7 @@ pipeline {
           steps {
              sh '''
             kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa              
-            KUBE_CERT_DIR=${CUSTOM_CERTS_DIR} kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
+            kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
             '''
           }
      }  
