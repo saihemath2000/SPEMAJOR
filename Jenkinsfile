@@ -104,7 +104,7 @@ pipeline {
           steps {
              sh '''
             kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa              
-            kubectl apply -f deployment.yaml --kubeconfig /home/cd_config -n cd
+            kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
             '''
           }
      }  
