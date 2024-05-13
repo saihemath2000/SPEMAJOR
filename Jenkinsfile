@@ -2,8 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_REGISTRY_CREDENTIALS = 'DockerHubCred'
-        // KUBECONFIG = '/var/lib/jenkins/.kube/config' 
+        DOCKER_REGISTRY_CREDENTIALS = 'DockerHubCred' 
     }
     
     stages {
@@ -91,24 +90,24 @@ pipeline {
               }
           }
         }
-        
-        stage('Deploy to Kubernetes') {
-            steps {
-                // Use withKubeConfig step to set KUBECONFIG environment variable
-                withKubeConfig([credentialsId: 'kubecli', serverUrl: 'https://192.168.49.2:8443', caCertificate: '']) {
-                    // Run kubectl commands here
-                    sh 'kubectl apply -f k8s/  --namespace=jenkins'
-                }
+      stage('setup kubeconfig') {
+          steps {
+            withCredentials([file(credentialsId: 'cd_config', variable: 'cd_config')]) {
+                sh "sudo cp \${cd_config} ${WORKSPACE}/cd_config"
             }
-        }
-    }
-    
-    // post {
-    //     always {
-    //         // Cleanup
-    //         script {
-    //             sh 'kubectl delete -f k8s/'
-    //         }
-    //     }
-    // }
+          }
+      }
+      stage('deploy') {
+          steps {
+             sh '''
+                 sudo kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa               
+                 sudo kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
+                '''
+          }
+     }  
+     stage('remove kubeconfig file') {
+            steps {
+                sh "rm -rf ${WORKSPACE}/cd_config"
+            }
+     }   
 }
