@@ -3,6 +3,8 @@ pipeline {
     
     environment {
         DOCKER_REGISTRY_CREDENTIALS = 'DockerHubCred' 
+        JENKINS_KUBECONFIG = '/var/lib/jenkins/workspace/SPEMAJOR/cd_config'
+
     }
     
     stages {
@@ -98,11 +100,24 @@ pipeline {
       //       }
       //     }
       // }
+      stage('Setup Jenkins Kubernetes Config') {
+            steps {
+                script {
+                    // Create a Jenkins-specific Kubernetes configuration file
+                    sh "cp ${JENKINS_HOME}/.kube/config ${JENKINS_KUBECONFIG}"
+                    sh "chmod 600 ${JENKINS_KUBECONFIG}"
+
+                    // Update paths in the Kubernetes config file
+                    sh "sed -i 's|/home/hemanth/.minikube|${JENKINS_HOME}/.minikube|g' ${JENKINS_KUBECONFIG}"
+                }
+            }
+        }
+  
       stage('deploy') {
           steps {
              sh '''
-                 kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa               
-                 kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
+                    kubectl --kubeconfig ${JENKINS_KUBECONFIG} config set-context --current --user=cd-sa               
+                    kubectl apply -f k8s/ --kubeconfig ${JENKINS_KUBECONFIG} -n cd
                 '''
           }
      }  
