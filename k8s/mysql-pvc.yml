@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
-  namespace: jenkins
+  # namespace: jenkins
 spec:
   storageClassName: manual
   accessModes:
