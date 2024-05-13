@@ -90,14 +90,14 @@ pipeline {
         //       }
         //   }
         // }
-      stage('setup kubeconfig') {
-          steps {
-            withCredentials([file(credentialsId: 'cd_config', variable: 'cd_config')]) {
-                // sh "cp \${cd_config} ${WORKSPACE}/cd_config"
-                sh "chmod 600 ${WORKSPACE}/cd_config"
-            }
-          }
-      }
+      // stage('setup kubeconfig') {
+      //     steps {
+      //       withCredentials([file(credentialsId: 'cd_config', variable: 'cd_config')]) {
+      //           // sh "cp \${cd_config} ${WORKSPACE}/cd_config"
+      //           sh "chmod 600 ${WORKSPACE}/cd_config"
+      //       }
+      //     }
+      // }
       stage('deploy') {
           steps {
              sh '''
