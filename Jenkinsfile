@@ -103,9 +103,9 @@ pipeline {
       stage('deploy') {
           steps {
              sh '''
-                    kubectl --kubeconfig ${JENKINS_KUBECONFIG} config set-context --current --user=cd-sa               
-                    kubectl apply -f k8s/ --kubeconfig ${JENKINS_KUBECONFIG} -n cd
-                '''
+            sudo kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa              
+            sudo kubectl apply -f deployment.yaml --kubeconfig /home/cd_config -n cd
+            '''
           }
      }  
      stage('remove kubeconfig file') {
