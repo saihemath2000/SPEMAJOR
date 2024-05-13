@@ -99,20 +99,7 @@ pipeline {
       //           sh "chmod 600 ${WORKSPACE}/cd_config"
       //       }
       //     }
-      // }
-      stage('Setup Jenkins Kubernetes Config') {
-            steps {
-                script {
-                    // Create a Jenkins-specific Kubernetes configuration file
-                    sh "cp ${JENKINS_HOME}/.kube/config ${JENKINS_KUBECONFIG}"
-                    sh "chmod 600 ${JENKINS_KUBECONFIG}"
-
-                    // Update paths in the Kubernetes config file
-                    sh "sed -i 's|/home/hemanth/.minikube|${JENKINS_HOME}/.minikube|g' ${JENKINS_KUBECONFIG}"
-                }
-            }
-        }
-  
+      // }  
       stage('deploy') {
           steps {
              sh '''
