@@ -93,15 +93,15 @@ pipeline {
       stage('setup kubeconfig') {
           steps {
             withCredentials([file(credentialsId: 'cd_config', variable: 'cd_config')]) {
-                sh "sudo cp \${cd_config} ${WORKSPACE}/cd_config"
+                sh "cp \${cd_config} ${WORKSPACE}/cd_config"
             }
           }
       }
       stage('deploy') {
           steps {
              sh '''
-                 sudo kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa               
-                 sudo kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
+                 kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa               
+                 kubectl apply -f k8s/ --kubeconfig ${WORKSPACE}/cd_config -n cd
                 '''
           }
      }  
