@@ -103,8 +103,8 @@ pipeline {
       stage('deploy') {
           steps {
              sh '''
-            sudo kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa              
-            sudo kubectl apply -f deployment.yaml --kubeconfig /home/cd_config -n cd
+            kubectl --kubeconfig ${WORKSPACE}/cd_config config set-context --current --user=cd-sa              
+            kubectl apply -f deployment.yaml --kubeconfig /home/cd_config -n cd
             '''
           }
      }  
