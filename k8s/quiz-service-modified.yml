@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: quiz-service-app
+  # namespace: jenkins
   labels:
     app: quiz-service-app
 spec:
@@ -61,6 +62,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: quiz-service-app
+  # namespace: jenkins
 spec:
   # type: NodePort
   selector:
@@ -73,6 +75,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: quiz-service-config
+  # namespace: jenkins
 data:
   EUREKA_HOSTNAME: eureka-0
   EUREKA_REGISTER_WITH_EUREKA: "true"

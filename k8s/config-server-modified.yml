@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: config-server-app
+  # namespace: jenkins
   labels:
     app: config-server-app
 spec:
@@ -47,6 +48,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: config-server-app
+  # namespace: jenkins
 spec:
   # type: NodePort
   selector:
@@ -60,6 +62,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: config-server-config
+  # namespace: jenkins
 data:
   EUREKA_HOSTNAME: eureka-0
   EUREKA_REGISTER_WITH_EUREKA: "true"
