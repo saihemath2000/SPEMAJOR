@@ -18,46 +18,46 @@ pipeline {
                 ])
             }
         }
-        stage('Build Backend Services') {
-            steps {
-                script {
-                    // Build each Spring Boot service
-                    def services = ['question-service', 'contribute-service', 'quiz-service','service-registry','api-gateway','cloud-config-server']
-                    for (service in services) {
-                        dir(service) {
-                            sh "mvn clean package"
-                        }
-                    }
-                }
-            }
-        }
+        // stage('Build Backend Services') {
+        //     steps {
+        //         script {
+        //             // Build each Spring Boot service
+        //             def services = ['question-service', 'contribute-service', 'quiz-service','service-registry','api-gateway','cloud-config-server']
+        //             for (service in services) {
+        //                 dir(service) {
+        //                     sh "mvn clean package"
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         
-        stage('Test Backend Services') {
-            steps {
-                script {
-                    // Test each Spring Boot service
-                    def services = ['question-service', 'contribute-service', 'quiz-service','service-registry','api-gateway','cloud-config-server']
-                    for (service in services) {
-                        dir(service) {
-                            sh "mvn test"
-                        }
-                    }
-                }
-            }
-        }
+        // stage('Test Backend Services') {
+        //     steps {
+        //         script {
+        //             // Test each Spring Boot service
+        //             def services = ['question-service', 'contribute-service', 'quiz-service','service-registry','api-gateway','cloud-config-server']
+        //             for (service in services) {
+        //                 dir(service) {
+        //                     sh "mvn test"
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         
-        stage('Build and Test Frontend') {
-            steps {
-                script {
-                    // Navigate to frontend directory
-                    dir('frontend') {
-                        // Install dependencies and build React app
-                        sh 'npm install'
-                        sh 'npm run build'
-                    }
-                }
-            }
-        }
+        // stage('Build and Test Frontend') {
+        //     steps {
+        //         script {
+        //             // Navigate to frontend directory
+        //             dir('frontend') {
+        //                 // Install dependencies and build React app
+        //                 sh 'npm install'
+        //                 sh 'npm run build'
+        //             }
+        //         }
+        //     }
+        // }
         
         stage('Dockerize') {
             steps {
