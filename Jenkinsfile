@@ -59,37 +59,37 @@ pipeline {
         //     }
         // }
         
-        stage('Dockerize') {
-            steps {
-                script {
-                    // Dockerize and push backend services
-                    sh 'docker build -t saihemanth1997/question-service:0.0.1 ./question-service'
-                    sh 'docker build -t saihemanth1997/contribute-service:0.0.1 ./contribute-service'
-                    sh 'docker build -t saihemanth1997/quiz-service:0.0.1 ./quiz-service'
-                    sh 'docker build -t saihemanth1997/front-end:0.0.1 ./frontend'
+        // stage('Dockerize') {
+        //     steps {
+        //         script {
+        //             // Dockerize and push backend services
+        //             sh 'docker build -t saihemanth1997/question-service:0.0.1 ./question-service'
+        //             sh 'docker build -t saihemanth1997/contribute-service:0.0.1 ./contribute-service'
+        //             sh 'docker build -t saihemanth1997/quiz-service:0.0.1 ./quiz-service'
+        //             sh 'docker build -t saihemanth1997/front-end:0.0.1 ./frontend'
                     
-                    // Dockerize other services
-                    sh 'docker build -t saihemanth1997/config-server:0.0.1 ./cloud-config-server'
-                    sh 'docker build -t saihemanth1997/service-registry:0.0.1 ./service-registry'
-                    sh 'docker build -t saihemanth1997/api-gateway:0.0.1 ./api-gateway'
-                }
-            }
-        }
-        stage('docker push images'){
-          steps{
-              script{
-                  docker.withRegistry('', 'DockerHubCred') {
-                      sh 'docker push saihemanth1997/question-service:0.0.1'
-                      sh 'docker push saihemanth1997/contribute-service:0.0.1'
-                      sh 'docker push saihemanth1997/quiz-service:0.0.1'
-                      sh 'docker push saihemanth1997/front-end:0.0.1'
-                      sh 'docker push saihemanth1997/config-server:0.0.1'
-                      sh 'docker push saihemanth1997/service-registry:0.0.1'
-                      sh 'docker push saihemanth1997/api-gateway:0.0.1' 
-                  }
-              }
-          }
-        }
+        //             // Dockerize other services
+        //             sh 'docker build -t saihemanth1997/config-server:0.0.1 ./cloud-config-server'
+        //             sh 'docker build -t saihemanth1997/service-registry:0.0.1 ./service-registry'
+        //             sh 'docker build -t saihemanth1997/api-gateway:0.0.1 ./api-gateway'
+        //         }
+        //     }
+        // }
+        // stage('docker push images'){
+        //   steps{
+        //       script{
+        //           docker.withRegistry('', 'DockerHubCred') {
+        //               sh 'docker push saihemanth1997/question-service:0.0.1'
+        //               sh 'docker push saihemanth1997/contribute-service:0.0.1'
+        //               sh 'docker push saihemanth1997/quiz-service:0.0.1'
+        //               sh 'docker push saihemanth1997/front-end:0.0.1'
+        //               sh 'docker push saihemanth1997/config-server:0.0.1'
+        //               sh 'docker push saihemanth1997/service-registry:0.0.1'
+        //               sh 'docker push saihemanth1997/api-gateway:0.0.1' 
+        //           }
+        //       }
+        //   }
+        // }
         
       stage('deploy to kubernetes') {
           steps {
