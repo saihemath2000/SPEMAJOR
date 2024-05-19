@@ -15,7 +15,7 @@ spec:
     - host: demo.localdev.me
       http:
         paths:
-          - path: /frontend
+          - path: /
             pathType: Prefix
             backend:
               service:
