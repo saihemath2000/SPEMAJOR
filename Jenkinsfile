@@ -12,7 +12,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: '*/master']],
                     doGenerateSubmoduleConfigurations: false,
-                    extensions: [],
+                    extensions: [[$class: 'CloneOption', timeout: 15]],
                     submoduleCfg: [],
                     userRemoteConfigs: [[url: 'https://github.com/saihemath2000/SPEMAJOR.git']]
                 ])
