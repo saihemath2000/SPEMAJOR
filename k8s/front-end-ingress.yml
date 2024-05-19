@@ -7,7 +7,7 @@ spec:
   defaultBackend:
     service:
       name: default-http-backend
-      namespace: default
+      # namespace: default
       port:
         number: 80
   ingressClassName: nginx
