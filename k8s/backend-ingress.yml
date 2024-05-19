@@ -15,7 +15,7 @@ spec:
     - host: demo.backend.me
       http:
         paths:
-          - path: /backend
+          - path: /
             pathType: Prefix
             backend:
               service:
