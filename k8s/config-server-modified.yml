@@ -74,4 +74,4 @@ data:
   EUREKA_HOSTNAME: eureka-0
   EUREKA_REGISTER_WITH_EUREKA: "true"
   EUREKA_FETCH_REGISTRY: "true"
-  EUREKA_DEFAULT_ZONE: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+  EUREKA_DEFAULT_ZONE: http://eureka-0.eureka.webapps.svc.cluster.local:8761/eureka
