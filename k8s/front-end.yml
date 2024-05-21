@@ -18,13 +18,13 @@ spec:
           image: saihemanth1997/front-end
           ports:
             - containerPort: 3000
-          resources:
-            requests:
-              memory: "1Gi"   # Adjust memory request
-              cpu: "500m"       # Adjust CPU request
-            limits:
-              memory: "2Gi"   # Adjust memory limit
-              cpu: "1"    
+          # resources:
+          #   requests:
+          #     memory: "1Gi"   # Adjust memory request
+          #     cpu: "500m"       # Adjust CPU request
+          #   limits:
+          #     memory: "2Gi"   # Adjust memory limit
+          #     cpu: "1"    
 
 ---
 apiVersion: v1
