@@ -17,4 +17,7 @@ public class Credentials {
 
     public Credentials(String email, String password) {
     }
+    public Credentials() {
+
+    }
 }
