@@ -32,10 +32,11 @@ public class QuestionController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody  Credentials credentials) {
-        log.info("Admin got logged in");
         if (questionService.validateCredentials(credentials.getEmail(), credentials.getPassword())) {
+            log.info("Admin got logged in");
             return ResponseEntity.ok("Login successful"); // Return success message
         } else {
+            log.error("not able to login");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password"); // Return unauthorized status
         }
     }
