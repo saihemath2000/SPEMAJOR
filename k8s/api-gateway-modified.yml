@@ -44,10 +44,10 @@ spec:
                   key: EUREKA_DEFAULT_ZONE
           resources:
             requests:
-              memory: "1Gi"   # Adjust memory request
+              memory: "512Mi"   # Adjust memory request
               cpu: "500m"       # Adjust CPU request
             limits:
-              memory: "2Gi"   # Adjust memory limit
+              memory: "1Gi"   # Adjust memory limit
               cpu: "1"   
 
 ---
