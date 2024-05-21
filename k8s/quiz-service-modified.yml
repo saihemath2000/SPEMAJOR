@@ -59,10 +59,10 @@ spec:
                   key: DB_PASSWORD
           resources:
             requests:
-              memory: "512Mi"   # Adjust memory request
+              memory: "1Gi"   # Adjust memory request
               cpu: "500m"       # Adjust CPU request
             limits:
-              memory: "1Gi"   # Adjust memory limit
+              memory: "2Gi"   # Adjust memory limit
               cpu: "1"           
         
 ---
