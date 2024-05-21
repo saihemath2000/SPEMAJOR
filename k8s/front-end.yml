@@ -20,10 +20,10 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: "1Gi"   # Adjust memory request
+              memory: "2Gi"   # Adjust memory request
               cpu: "500m"       # Adjust CPU request
             limits:
-              memory: "2Gi"   # Adjust memory limit
+              memory: "3Gi"   # Adjust memory limit
               cpu: "1"    
 
 ---
