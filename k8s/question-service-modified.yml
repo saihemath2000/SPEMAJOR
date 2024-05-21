@@ -57,13 +57,13 @@ spec:
                 configMapKeyRef:
                   name: question-service-config
                   key: DB_PASSWORD
-          resources:
-            requests:
-              memory: "512Mi"   # Adjust memory request
-              cpu: "500m"       # Adjust CPU request
-            limits:
-              memory: "1Gi"   # Adjust memory limit
-              cpu: "1"           
+          # resources:
+          #   requests:
+          #     memory: "512Mi"   # Adjust memory request
+          #     cpu: "500m"       # Adjust CPU request
+          #   limits:
+          #     memory: "1Gi"   # Adjust memory limit
+          #     cpu: "1"           
 ---
 apiVersion: v1
 kind: Service
