@@ -45,10 +45,10 @@ spec:
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: "/var/lib/mysql"
-          resources:
-            requests:
-              memory: "512Mi"   # Adjust memory request
-              cpu: "500m"       # Adjust CPU request
-            limits:
-              memory: "1Gi"     # Adjust memory limit
-              cpu: "1"           
+          # resources:
+          #   requests:
+          #     memory: "512Mi"   # Adjust memory request
+          #     cpu: "500m"       # Adjust CPU request
+          #   limits:
+          #     memory: "1Gi"     # Adjust memory limit
+          #     cpu: "1"           
